@@ -1,0 +1,86 @@
+@import "../../partials/_mixins.scss";
+@import "../../partials/_variables.scss";
+
+.current-weather {
+  color: $primary-text;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__container-right {
+    @include tablet {
+      border-left: solid black 0.1rem;
+      padding: 1rem;
+    }
+  }
+
+  &__container-left {
+    @include tablet {
+      padding: 1rem;
+      text-align: center;
+    }
+  }
+
+  &__high-low-wrapper {
+    display: flex;
+    align-items: flex-end;
+    padding-top: 0.5rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include tablet {
+        display: block;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  &__high,
+  &__low {
+    padding-right: 1rem;
+    font-size: 1.5rem;
+  }
+
+  &__temperature {
+    font-size: 6rem;
+
+    @include tablet {
+      order: 1;
+      font-size: 4rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+
+    @include tablet {
+      order: 4;
+    }
+  }
+
+  &__location {
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+
+    @include tablet {
+      font-size: 4rem;
+      padding-bottom: 0;
+      order: 3;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import "./App.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 
 // Assets
@@ -11,6 +11,9 @@ import clearIcon from "./assets/icons/clear.svg";
 import rainIcon from "./assets/icons/rain.svg";
 import snowIcon from "./assets/icons/snow.svg";
 import drizzleIcon from "./assets/icons/drizzle.svg";
+
+//Components
+import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -85,7 +88,20 @@ function App() {
     "09n": drizzleIcon,
   };
 
-  return <div className="App"></div>;
+  if (!weatherData) {
+    return <div>Loading...</div>;
+  }
+  
+  return (
+    <section className="App">
+      <CurrentWeather
+        data={weatherData}
+        iconMapping={iconMapping}
+        locationName={locationName}
+        locationCountry={locationCountry}
+      />
+    </section>
+  );
 }
 
 export default App;
