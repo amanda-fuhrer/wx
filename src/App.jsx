@@ -2,6 +2,16 @@ import "./App.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+// Assets
+import fewCloudsIcon from "./assets/icons/few-clouds.svg";
+import cloudIcon from "./assets/icons/clouds.svg";
+import thunderstormIcon from "./assets/icons/thunderstorm.svg";
+import mistIcon from "./assets/icons/mist.svg";
+import clearIcon from "./assets/icons/clear.svg";
+import rainIcon from "./assets/icons/rain.svg";
+import snowIcon from "./assets/icons/snow.svg";
+import drizzleIcon from "./assets/icons/drizzle.svg";
+
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [location, setLocation] = useState("toronto");
@@ -53,6 +63,27 @@ function App() {
   useEffect(() => {
     loadWeatherData();
   }, [loadWeatherData]);
+
+  const iconMapping = {
+    "02d": fewCloudsIcon,
+    "02n": fewCloudsIcon,
+    "03d": cloudIcon,
+    "03n": cloudIcon,
+    "04d": cloudIcon,
+    "04n": cloudIcon,
+    "11d": thunderstormIcon,
+    "11n": thunderstormIcon,
+    "50d": mistIcon,
+    "50n": mistIcon,
+    "01d": clearIcon,
+    "01n": clearIcon,
+    "10d": rainIcon,
+    "10n": rainIcon,
+    "13d": snowIcon,
+    "13n": snowIcon,
+    "09d": drizzleIcon,
+    "09n": drizzleIcon,
+  };
 
   return <div className="App"></div>;
 }
