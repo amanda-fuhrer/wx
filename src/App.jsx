@@ -14,6 +14,7 @@ import drizzleIcon from "./assets/icons/drizzle.svg";
 
 //Components
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
+import Header from "./components/Header/Header";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -22,6 +23,10 @@ function App() {
   const [locationCountry, setLocationCountry] = useState("");
   const [units, setUnits] = useState("metric");
   const apiKey = process.env.REACT_APP_API_KEY;
+  
+  const updateWeather = (newLocation) => {
+    setLocation(newLocation);
+  };
 
   const fetchCoordinates = async (location, apiKey) => {
     const geocodingAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`;
@@ -94,6 +99,12 @@ function App() {
   
   return (
     <section className="App">
+      <Header
+        updateWeather={updateWeather}
+        data={weatherData}
+        setUnits={setUnits}
+        units={units}
+      />
       <CurrentWeather
         data={weatherData}
         iconMapping={iconMapping}

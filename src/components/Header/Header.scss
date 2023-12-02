@@ -1,0 +1,10 @@
+@import "../../partials/_mixins.scss";
+@import "../../partials/_variables.scss";
+
+.header {
+  display: flex;
+
+  @include tablet {
+    text-align: end;
+  }
+}
