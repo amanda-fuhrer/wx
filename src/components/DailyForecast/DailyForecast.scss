@@ -1,0 +1,73 @@
+@import "../../partials/_mixins.scss";
+@import "../../partials/_variables.scss";
+
+.daily-forecast {
+  margin: 1rem 0;
+
+  &__container {
+    color: $primary-text;
+    padding: 0.5rem 0;
+    border: {
+      top: solid black 0.1rem;
+      bottom: solid black 0.1rem;
+    }
+
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      height: 6rem;
+    }
+  }
+
+  &__header {
+    font-size: 1rem;
+    padding-bottom: 0.25rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__date {
+    width: 20%;
+
+    @include tablet {
+      order: 3;
+      width: auto;
+    }
+  }
+
+  &__temperature-container {
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      width: 2.5rem;
+      order: 2;
+    }
+  }
+
+  &__temperature--high {
+    font-weight: 700;
+  }
+
+  &__icon {
+    width: 1.5rem;
+
+    @include tablet {
+      order: 1;
+    }
+  }
+
+  @include tablet {
+    margin: 3rem 4rem;
+  }
+}

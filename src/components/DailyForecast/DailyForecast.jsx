@@ -1,4 +1,4 @@
-import React from "react";
+import "./DailyForecast.scss";
 
 function DailyForecast({ data, iconMapping }) {
   const getWeekday = (timestamp) => {
