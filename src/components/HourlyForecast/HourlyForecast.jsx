@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HourlyForecast.scss";
 
-const HourlyForecast = ({ data, iconMapping }) => {
+function HourlyForecast({ data, iconMapping }) {
   const [hourlyData, setHourlyData] = useState([]);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const HourlyForecast = ({ data, iconMapping }) => {
       </div>
     </section>
   );
-};
+}
 
 const HourlyForecastItem = ({ time, iconSrc, iconAlt, temperature }) => (
   <div className="hourly-forecast__item">

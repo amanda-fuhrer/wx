@@ -16,6 +16,7 @@ import drizzleIcon from "./assets/icons/drizzle.svg";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import Header from "./components/Header/Header";
 import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
+import DailyForecast from "./components/DailyForecast/DailyForecast";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -24,7 +25,7 @@ function App() {
   const [locationCountry, setLocationCountry] = useState("");
   const [units, setUnits] = useState("metric");
   const apiKey = process.env.REACT_APP_API_KEY;
-  
+
   const updateWeather = (newLocation) => {
     setLocation(newLocation);
   };
@@ -97,7 +98,7 @@ function App() {
   if (!weatherData) {
     return <div>Loading...</div>;
   }
-  
+
   return (
     <section className="App">
       <Header
@@ -112,7 +113,8 @@ function App() {
         locationName={locationName}
         locationCountry={locationCountry}
       />
-      <HourlyForecast data={weatherData} iconMapping={iconMapping}/>
+      <HourlyForecast data={weatherData} iconMapping={iconMapping} />
+      <DailyForecast data={weatherData} iconMapping={iconMapping} />
     </section>
   );
 }
