@@ -15,6 +15,7 @@ import drizzleIcon from "./assets/icons/drizzle.svg";
 //Components
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import Header from "./components/Header/Header";
+import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -111,6 +112,7 @@ function App() {
         locationName={locationName}
         locationCountry={locationCountry}
       />
+      <HourlyForecast data={weatherData} iconMapping={iconMapping}/>
     </section>
   );
 }
