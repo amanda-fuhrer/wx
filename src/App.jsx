@@ -17,6 +17,7 @@ import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import Header from "./components/Header/Header";
 import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 import DailyForecast from "./components/DailyForecast/DailyForecast";
+import Chart from "./components/Chart/Chart";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -114,6 +115,7 @@ function App() {
         locationCountry={locationCountry}
       />
       <HourlyForecast data={weatherData} iconMapping={iconMapping} />
+      <Chart data={weatherData} />
       <DailyForecast data={weatherData} iconMapping={iconMapping} />
     </section>
   );

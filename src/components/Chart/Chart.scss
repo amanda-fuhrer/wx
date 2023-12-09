@@ -1,0 +1,11 @@
+@import "../../partials/_mixins.scss";
+@import "../../partials/_variables.scss";
+
+.chart {
+  display: none;
+
+  @include tablet {
+    display: block;
+    margin: 2.5rem 3rem;
+  }
+}
