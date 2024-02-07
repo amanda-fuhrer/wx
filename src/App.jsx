@@ -18,6 +18,7 @@ import Header from "./components/Header/Header";
 import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 import DailyForecast from "./components/DailyForecast/DailyForecast";
 import Chart from "./components/Chart/Chart";
+import Loader from "./components/Loader/Loader";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -97,7 +98,7 @@ function App() {
   };
 
   if (!weatherData) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
