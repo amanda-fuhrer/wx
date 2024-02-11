@@ -9,4 +9,42 @@
   background-color: $primary-background;
   padding: 1rem;
   font-family: "Outfit";
+  height: 100vh;
+}
+
+.clear-day {
+  background: $background-clear-day;
+}
+
+.clear-night {
+  background: $background-clear-night;
+}
+
+.cloud-day,
+.cloud-night,
+.few-clouds-day,
+.few-clouds-night {
+  background: $background-cloud;
+}
+
+.rain-day,
+.rain-night,
+.drizzle-day,
+.drizzle-night {
+  background: $background-rain;
+}
+
+.thunderstorm-day,
+.thunderstorm-night {
+  background: $background-thunderstorm;
+}
+
+.mist-day,
+.mist-night {
+  background: $background-mist;
+}
+
+.snow-day,
+.snow-night {
+  background: $background-snow;
 }

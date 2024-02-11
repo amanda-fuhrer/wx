@@ -20,12 +20,58 @@ import DailyForecast from "./components/DailyForecast/DailyForecast";
 import Chart from "./components/Chart/Chart";
 import Loader from "./components/Loader/Loader";
 
+const iconMapping = {
+  "02d": fewCloudsIcon,
+  "02n": fewCloudsIcon,
+  "03d": cloudIcon,
+  "03n": cloudIcon,
+  "04d": cloudIcon,
+  "04n": cloudIcon,
+  "11d": thunderstormIcon,
+  "11n": thunderstormIcon,
+  "50d": mistIcon,
+  "50n": mistIcon,
+  "01d": clearIcon,
+  "01n": clearIcon,
+  "10d": rainIcon,
+  "10n": rainIcon,
+  "13d": snowIcon,
+  "13n": snowIcon,
+  "09d": drizzleIcon,
+  "09n": drizzleIcon,
+};
+
+const getBackgroundClass = (condition) => {
+  const backgroundClasses = {
+    "02d": "few-clouds-day",
+    "02n": "few-clouds-night",
+    "03d": "cloud-day",
+    "03n": "cloud-night",
+    "04d": "cloud-day",
+    "04n": "cloud-night",
+    "11d": "thunderstorm-day",
+    "11n": "thunderstorm-night",
+    "50d": "mist-day",
+    "50n": "mist-night",
+    "01d": "clear-day",
+    "01n": "clear-night",
+    "10d": "rain-day",
+    "10n": "rain-night",
+    "13d": "snow-day",
+    "13n": "snow-night",
+    "09d": "drizzle-day",
+    "09n": "drizzle-night",
+  };
+  return backgroundClasses[condition] || "";
+};
+
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [location, setLocation] = useState("toronto");
   const [locationName, setLocationName] = useState("");
   const [locationCountry, setLocationCountry] = useState("");
   const [units, setUnits] = useState("metric");
+  const [backgroundClass, setBackgroundClass] = useState("");
   const apiKey = process.env.REACT_APP_API_KEY;
 
   const updateWeather = (newLocation) => {
@@ -76,33 +122,21 @@ function App() {
     loadWeatherData();
   }, [loadWeatherData]);
 
-  const iconMapping = {
-    "02d": fewCloudsIcon,
-    "02n": fewCloudsIcon,
-    "03d": cloudIcon,
-    "03n": cloudIcon,
-    "04d": cloudIcon,
-    "04n": cloudIcon,
-    "11d": thunderstormIcon,
-    "11n": thunderstormIcon,
-    "50d": mistIcon,
-    "50n": mistIcon,
-    "01d": clearIcon,
-    "01n": clearIcon,
-    "10d": rainIcon,
-    "10n": rainIcon,
-    "13d": snowIcon,
-    "13n": snowIcon,
-    "09d": drizzleIcon,
-    "09n": drizzleIcon,
-  };
+  useEffect(() => {
+    // Set background class based on weather condition
+    if (weatherData) {
+      const { icon } = weatherData.current.weather[0];
+      const backgroundClass = getBackgroundClass(icon);
+      setBackgroundClass(backgroundClass);
+    }
+  }, [weatherData]);
 
   if (!weatherData) {
     return <Loader />;
   }
 
   return (
-    <section className="App">
+    <section className={`App ${backgroundClass}`}>
       <Header
         updateWeather={updateWeather}
         data={weatherData}
