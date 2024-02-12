@@ -14,6 +14,15 @@
     align-items: center;
   }
 
+  &__image {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 14rem;
+    }
+  }
+
   &__container-right {
     @include tablet {
       border-left: solid black 0.1rem;

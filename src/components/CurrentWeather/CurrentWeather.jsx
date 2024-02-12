@@ -1,6 +1,6 @@
 import "./CurrentWeather.scss";
 
-function CurrentWeather({ data, locationName, locationCountry }) {
+function CurrentWeather({ data, locationName, locationCountry, imageMapping }) {
   const currentTemp = Math.round(data.current.temp);
   const highTemp = Math.round(data.daily[0].temp.max);
   const lowTemp = Math.round(data.daily[0].temp.min);
@@ -8,7 +8,7 @@ function CurrentWeather({ data, locationName, locationCountry }) {
 
   return (
     <section className="current-weather">
-
+      <img src={imageMapping[data.current.weather[0].icon]} alt="current weather" className="current-weather__image"/>
       <div className="current-weather__container-left">
         <h1 className="current-weather__temperature">{currentTemp}°</h1>
         <div className="current-weather__high-low-wrapper--tablet">
