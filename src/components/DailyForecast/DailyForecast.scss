@@ -4,6 +4,10 @@
 .daily-forecast {
   margin: 1rem 0;
 
+  @include tablet {
+    margin: 7rem 4rem;
+  }
+
   &__container {
     color: $primary-text;
     padding: 0.5rem 0;
@@ -45,7 +49,7 @@
   }
 
   &__temperature-container {
-    width: 12%;
+    width: 15%;
     display: flex;
     justify-content: space-between;
 
@@ -65,9 +69,5 @@
     @include tablet {
       order: 1;
     }
-  }
-
-  @include tablet {
-    margin: 3rem 4rem;
   }
 }

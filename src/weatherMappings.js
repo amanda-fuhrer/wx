@@ -7,14 +7,6 @@ import rainIcon from "./assets/icons/rain.svg";
 import snowIcon from "./assets/icons/snow.svg";
 import drizzleIcon from "./assets/icons/drizzle.svg";
 
-import snow from "./assets/images/snow.svg";
-import rain from "./assets/images/rain.svg";
-import clear from "./assets/images/clear.svg";
-import thunderstorm from "./assets/images/thunderstorm.svg";
-import mist from "./assets/images/mist.svg";
-import clearNight from "./assets/images/clear-night.svg";
-import cloud from "./assets/images/cloud.svg";
-
 export const iconMapping = {
     "02d": fewCloudsIcon,
     "02n": fewCloudsIcon,
@@ -34,27 +26,6 @@ export const iconMapping = {
     "13n": snowIcon,
     "09d": drizzleIcon,
     "09n": drizzleIcon,
-  };
-  
-  export const imageMapping = {
-    "02d": cloud,
-    "02n": cloud,
-    "03d": cloud,
-    "03n": cloud,
-    "04d": cloud,
-    "04n": cloud,
-    "11d": thunderstorm,
-    "11n": thunderstorm,
-    "50d": mist,
-    "50n": mist,
-    "01d": clear,
-    "01n": clearNight,
-    "10d": rain,
-    "10n": rain,
-    "13d": snow,
-    "13n": snow,
-    "09d": rain,
-    "09n": rain,
   };
   
   export const backgroundClassMapping = {

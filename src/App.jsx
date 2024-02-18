@@ -9,11 +9,7 @@ import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 import DailyForecast from "./components/DailyForecast/DailyForecast";
 import Chart from "./components/Chart/Chart";
 import Loader from "./components/Loader/Loader";
-import {
-  iconMapping,
-  imageMapping,
-  backgroundClassMapping,
-} from "./weatherMappings";
+import { iconMapping, backgroundClassMapping } from "./weatherMappings";
 
 const getBackgroundClass = (condition) => {
   return backgroundClassMapping[condition] || "";
@@ -97,15 +93,14 @@ function App() {
         setUnits={setUnits}
         units={units}
       />
-      <CurrentWeather
-        data={weatherData}
-        imageMapping={imageMapping}
-        locationName={locationName}
-        locationCountry={locationCountry}
-      />
-      <HourlyForecast data={weatherData} iconMapping={iconMapping} />
-      <Chart data={weatherData} />
-      <DailyForecast data={weatherData} iconMapping={iconMapping} />
+        <CurrentWeather
+          data={weatherData}
+          locationName={locationName}
+          locationCountry={locationCountry}
+        />
+        <HourlyForecast data={weatherData} iconMapping={iconMapping} />
+        <Chart data={weatherData} />
+        <DailyForecast data={weatherData} iconMapping={iconMapping} />
     </section>
   );
 }

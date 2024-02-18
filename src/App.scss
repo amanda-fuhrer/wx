@@ -4,12 +4,14 @@
 @import "./partials/_fonts.scss";
 
 .App {
-  display: flex;
-  flex-direction: column;
   background-color: $primary-background;
   padding: 1rem;
   font-family: "Outfit";
   height: 100vh;
+
+  @include tablet {
+    padding: 2rem;
+  }
 }
 
 .clear-day {

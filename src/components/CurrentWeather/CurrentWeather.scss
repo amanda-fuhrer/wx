@@ -6,21 +6,12 @@
   display: flex;
   flex-direction: column;
   margin-top: 7rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 
   @include tablet {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
-
-  &__image {
-    display: none;
-
-    @include tablet {
-      display: block;
-      width: 14rem;
-    }
   }
 
   &__container-right {

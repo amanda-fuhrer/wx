@@ -8,7 +8,6 @@ function CurrentWeather({ data, locationName, locationCountry, imageMapping }) {
 
   return (
     <section className="current-weather">
-      <img src={imageMapping[data.current.weather[0].icon]} alt="current weather" className="current-weather__image"/>
       <div className="current-weather__container-left">
         <h1 className="current-weather__temperature">{currentTemp}°</h1>
         <div className="current-weather__high-low-wrapper--tablet">
