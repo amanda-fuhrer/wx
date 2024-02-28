@@ -1,4 +1,3 @@
-@import "../../partials/_mixins.scss";
 @import "../../partials/_variables.scss";
 
 .search {
@@ -12,7 +11,7 @@
   &__bar {
     background-color: transparent;
     width: 100%;
-    padding-left: 2rem;
+    padding-left: 2.5rem;
 
     &:focus {
       outline: none;

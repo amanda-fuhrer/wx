@@ -1,17 +1,11 @@
-@import "./partials/_mixins.scss";
 @import "./partials/_variables.scss";
 @import "./partials/_general.scss";
 @import "./partials/_fonts.scss";
 
 .App {
   background-color: $primary-background;
-  padding: 1rem;
+  padding: 2rem 1rem;
   font-family: "Outfit";
-  height: 100vh;
-
-  @include tablet {
-    padding: 2rem;
-  }
 }
 
 .clear-day {

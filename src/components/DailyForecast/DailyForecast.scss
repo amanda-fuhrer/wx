@@ -1,12 +1,7 @@
-@import "../../partials/_mixins.scss";
 @import "../../partials/_variables.scss";
 
 .daily-forecast {
   margin: 1rem 0;
-
-  @include tablet {
-    margin: 7rem 4rem;
-  }
 
   &__container {
     color: $primary-text;
@@ -14,12 +9,6 @@
     border: {
       top: solid black 0.1rem;
       bottom: solid black 0.1rem;
-    }
-
-    @include tablet {
-      display: flex;
-      justify-content: space-around;
-      height: 6rem;
     }
   }
 
@@ -33,30 +22,16 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0;
-
-    @include tablet {
-      flex-direction: column;
-    }
   }
 
   &__date {
     width: 20%;
-
-    @include tablet {
-      order: 3;
-      width: auto;
-    }
   }
 
   &__temperature-container {
     width: 15%;
     display: flex;
     justify-content: space-between;
-
-    @include tablet {
-      width: 3.5rem;
-      order: 2;
-    }
   }
 
   &__temperature--high {
@@ -65,9 +40,5 @@
 
   &__icon {
     width: 1.5rem;
-
-    @include tablet {
-      order: 1;
-    }
   }
 }

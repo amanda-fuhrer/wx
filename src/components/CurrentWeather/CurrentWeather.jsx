@@ -8,20 +8,15 @@ function CurrentWeather({ data, locationName, locationCountry, imageMapping }) {
 
   return (
     <section className="current-weather">
-      <div className="current-weather__container-left">
-        <h1 className="current-weather__temperature">{currentTemp}°</h1>
-        <div className="current-weather__high-low-wrapper--tablet">
-          <div className="current-weather__high"><p>H: {highTemp}°</p></div>
-          <div className="current-weather__low"><p>L: {lowTemp}°</p></div>
+      <h1 className="current-weather__temperature">{currentTemp}°</h1>
+      <p className="current-weather__location">{`${locationName}, ${locationCountry}`}</p>
+      <p className="current-weather__description">{weatherDescription}</p>
+      <div className="current-weather__high-low-wrapper">
+        <div className="current-weather__high">
+          <p>H: {highTemp}°</p>
         </div>
-      </div>
-
-      <div className="current-weather__container-right">
-        <p className="current-weather__location">{`${locationName}, ${locationCountry}`}</p>
-        <p className="current-weather__description">{weatherDescription}</p>
-        <div className="current-weather__high-low-wrapper">
-          <div className="current-weather__high"><p>H: {highTemp}°</p></div>
-          <div className="current-weather__low"><p>L: {lowTemp}°</p></div>
+        <div className="current-weather__low">
+          <p>L: {lowTemp}°</p>
         </div>
       </div>
     </section>

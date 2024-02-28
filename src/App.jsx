@@ -7,7 +7,6 @@ import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import Header from "./components/Header/Header";
 import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 import DailyForecast from "./components/DailyForecast/DailyForecast";
-import Chart from "./components/Chart/Chart";
 import Loader from "./components/Loader/Loader";
 import { iconMapping, backgroundClassMapping } from "./weatherMappings";
 
@@ -99,7 +98,6 @@ function App() {
           locationCountry={locationCountry}
         />
         <HourlyForecast data={weatherData} iconMapping={iconMapping} />
-        <Chart data={weatherData} />
         <DailyForecast data={weatherData} iconMapping={iconMapping} />
     </section>
   );
