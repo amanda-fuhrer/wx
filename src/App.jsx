@@ -28,7 +28,7 @@ function App() {
   };
 
   const fetchCoordinates = async (location, apiKey) => {
-    const geocodingAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`;
+    const geocodingAPI = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`;
     try {
       const response = await axios.get(geocodingAPI);
       const { lat, lon, country } = response.data[0];
