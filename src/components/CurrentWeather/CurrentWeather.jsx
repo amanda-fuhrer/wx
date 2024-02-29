@@ -1,6 +1,6 @@
 import "./CurrentWeather.scss";
 
-function CurrentWeather({ data, locationName, locationCountry, imageMapping }) {
+function CurrentWeather({ data, locationName, locationCountry }) {
   const currentTemp = Math.round(data.current.temp);
   const highTemp = Math.round(data.daily[0].temp.max);
   const lowTemp = Math.round(data.daily[0].temp.min);

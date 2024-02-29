@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "./HourlyForecast.scss";
+import { useEffect, useState } from "react";
 
 function HourlyForecast({ data, iconMapping }) {
   const [hourlyData, setHourlyData] = useState([]);
