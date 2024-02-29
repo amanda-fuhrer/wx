@@ -9,11 +9,7 @@ function DailyForecast({ data, iconMapping }) {
   const renderDailyForecastItem = (day, index) => (
     <div key={index} className="daily-forecast__item">
       <p className="daily-forecast__date">{getWeekday(day.dt)}</p>
-      <img
-        src={iconMapping[day.weather[0].icon]}
-        alt={day.weather[0].description}
-        className="daily-forecast__icon"
-      />
+      <img src={iconMapping[day.weather[0].icon]} alt={day.weather[0].description} className="daily-forecast__icon"/>
       <div className="daily-forecast__temperature-container">
         <p className="daily-forecast__temperature--high">
           {Math.round(day.temp.max)}°
