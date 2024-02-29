@@ -1,0 +1,46 @@
+@import "./partials/_variables.scss";
+@import "./partials/_general.scss";
+@import "./partials/_fonts.scss";
+
+.App {
+  background-color: $primary-background;
+  padding: 2rem 1rem;
+  font-family: "Outfit";
+}
+
+.clear-day {
+  background: $background-clear-day;
+}
+
+.clear-night {
+  background: $background-clear-night;
+}
+
+.cloud-day,
+.cloud-night,
+.few-clouds-day,
+.few-clouds-night {
+  background: $background-cloud;
+}
+
+.rain-day,
+.rain-night,
+.drizzle-day,
+.drizzle-night {
+  background: $background-rain;
+}
+
+.thunderstorm-day,
+.thunderstorm-night {
+  background: $background-thunderstorm;
+}
+
+.mist-day,
+.mist-night {
+  background: $background-mist;
+}
+
+.snow-day,
+.snow-night {
+  background: $background-snow;
+}

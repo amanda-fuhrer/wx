@@ -1,0 +1,30 @@
+@import "../../partials/_variables.scss";
+
+.toggle {
+  display: flex;
+  justify-content: flex-end;
+
+  &__container {
+    width: 4rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.2rem;
+  }
+
+  &__button--fahrenheit {
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.23);
+  }
+
+  &__button--celsius {
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.23);
+    border-right: solid black 0.1rem;
+    padding-right: 0.5rem;
+  }
+
+  &__button--fahrenheit.selected,
+  &__button--celsius.selected {
+    color: $primary-text;
+  }
+}

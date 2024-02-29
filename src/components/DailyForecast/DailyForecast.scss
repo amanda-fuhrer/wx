@@ -1,0 +1,44 @@
+@import "../../partials/_variables.scss";
+
+.daily-forecast {
+  margin: 1rem 0;
+
+  &__container {
+    color: $primary-text;
+    padding: 0.5rem 0;
+    border: {
+      top: solid black 0.1rem;
+      bottom: solid black 0.1rem;
+    }
+  }
+
+  &__header {
+    font-size: 1rem;
+    padding-bottom: 0.25rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+
+  &__date {
+    width: 20%;
+  }
+
+  &__temperature-container {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__temperature--high {
+    font-weight: 700;
+  }
+
+  &__icon {
+    width: 1.5rem;
+  }
+}
